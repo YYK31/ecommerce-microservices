@@ -51,6 +51,11 @@ public class OrderService {
 		  orderInterface.deleteById(id);
 		  return "order deleted successfull";
 	  }
-	  
+
+	  public String deleteOrderById(Long id) {
+		  Order order=orderInterface.findById(id).orElseThrow(()->new RuntimeException("order not find"));
+		  orderInterface.deleteById(id);
+		  return "order deleted successfull";
+	  }
 	  
 }
